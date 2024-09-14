@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -356,6 +358,9 @@
             </div>
           </div>
         </section>
+        <p>This site has been visited <span id="visit-count"></span> times.</p>
+
+
 		<!-- ==========================
         CONTACT SECTION END
         =========================== -->
@@ -365,13 +370,38 @@
         =========================== -->
         <footer>
           <div class="container">
-            <div class="row">
-              <div class="col-md-12 text-center">
-                <p>All Rights Reserved. &copy; 2015 <a href="">Thisara Shaminda</a>
+              <div class="row">
+                  <div class="col-md-12 text-center">
+                      <p>All Rights Reserved. &copy; 2024 <a href="#">Thisara Shaminda</a></p>
+                  </div>
               </div>
-            </div>
           </div>
-        </footer>
+      
+          <script>
+              // Check if 'visitCount' exists in localStorage
+              if (localStorage.getItem('visitCount')) {
+                  // Get the current value of the visit count
+                  let visitCount = parseInt(localStorage.getItem('visitCount'));
+      
+                  // Increment the visit count by 1
+                  visitCount += 1;
+      
+                  // Update the visit count in localStorage
+                  localStorage.setItem('visitCount', visitCount);
+      
+                  // Display the updated visit count on the page
+                  document.getElementById('visit-count').innerText = visitCount;
+              } else {
+                  // If 'visitCount' doesn't exist, set it to 1 (first visit)
+                  localStorage.setItem('visitCount', 1);
+                  document.getElementById('visit-count').innerText = 1;
+              }
+          </script>
+      
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      </footer>
+      
 		<!-- ==========================
         FOOTER SECTION END
         =========================== -->		
